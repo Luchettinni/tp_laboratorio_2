@@ -1,0 +1,10 @@
+C:\Users\Apyr\Desktop\MiCalculadora\bin\Debug\MiCalculadora.exe.config
+C:\Users\Apyr\Desktop\MiCalculadora\bin\Debug\MiCalculadora.exe
+C:\Users\Apyr\Desktop\MiCalculadora\bin\Debug\MiCalculadora.pdb
+C:\Users\Apyr\Desktop\MiCalculadora\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Apyr\Desktop\MiCalculadora\obj\Debug\MiCalculadora.FormCalculadora.resources
+C:\Users\Apyr\Desktop\MiCalculadora\obj\Debug\MiCalculadora.Properties.Resources.resources
+C:\Users\Apyr\Desktop\MiCalculadora\obj\Debug\Entidades.csproj.GenerateResource.cache
+C:\Users\Apyr\Desktop\MiCalculadora\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Apyr\Desktop\MiCalculadora\obj\Debug\MiCalculadora.exe
+C:\Users\Apyr\Desktop\MiCalculadora\obj\Debug\MiCalculadora.pdb
