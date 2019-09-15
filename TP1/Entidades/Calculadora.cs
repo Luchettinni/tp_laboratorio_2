@@ -7,44 +7,53 @@ namespace Entidades
     {
         private static string ValidarOperador(string operador)
         {
+            string retorno;
             if (operador == "+" || operador == "-" || operador == "/" || operador == "*")
             {
-                return operador;
+                retorno = operador;
             }
             else
             {
-                return "+";
+                retorno = "+";
             }
 
-            
+            return retorno;
         }
 
         public static double Operar(Numero num1, Numero num2, string operador)
         {
+            double retorno;
+
             operador = ValidarOperador(operador);
 
             switch ( operador )
             {
                 case "-":
                 {
-                    return num1 - num2;
+                    retorno = num1 - num2;
+                    break;
                 }
 
                 case "*":
                 {
-                    return num1 * num2;
+                    retorno = num1 * num2;
+                    break;
                 }
 
                 case "/":
                 {
-                    return num1 / num2;
+                    retorno = num1 / num2;
+                    break;
                 }
 
                 default:
                 {
-                    return num1 + num2;
+                    retorno = num1 + num2;
+                    break;
                 }
             }
+
+            return retorno;
         }
     }
 }

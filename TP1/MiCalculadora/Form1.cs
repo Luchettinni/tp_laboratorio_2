@@ -14,10 +14,13 @@ namespace MiCalculadora
 {
     public partial class FormCalculadora : Form
     {
-        string result;
         public FormCalculadora()
         {
             InitializeComponent();
+            cmbOperador.Items.Add("/");
+            cmbOperador.Items.Add("+");
+            cmbOperador.Items.Add("-");
+            cmbOperador.Items.Add("*");
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -25,10 +28,34 @@ namespace MiCalculadora
             Application.Exit();
         }
 
+        private void BtnConvertirABinario_Click(object sender, EventArgs e)
+        {
+            if (lblResultado.Text != "")
+            {
+                Numero numBin = new Numero(lblResultado.Text);
+                lblResultado.Text = numBin.DecimalBinario(lblResultado.Text);
+            }
+        }
+
+        private void BtnConvertirADecimal_Click(object sender, EventArgs e)
+        {
+            if (lblResultado.Text != "")
+            {
+                Numero numDec = new Numero(lblResultado.Text);
+                lblResultado.Text = numDec.BinarioDecimal(lblResultado.Text);
+            }
+        }
+
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
+
+        private void BtnOperar_Click(object sender, EventArgs e)
+        {
+            lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
+        }
+
         public void Limpiar()
         {
             txtNumero1.Text = "";
@@ -37,28 +64,11 @@ namespace MiCalculadora
             lblResultado.Text = "";
         }
 
-        private void FormCalculadora_Load(object sender, EventArgs e)
+        private static double Operar(string numero2, string numero1, string operador)
         {
-            cmbOperador.Items.Add("/");
-            cmbOperador.Items.Add("+");
-            cmbOperador.Items.Add("-");
-            cmbOperador.Items.Add("*");
-        }
-
-        private void BtnOperar_Click(object sender, EventArgs e)
-        {
-            Numero num2 = new Numero(txtNumero2.Text);
-            Numero num1 = new Numero(txtNumero1.Text);
-
-            result = Calculadora.Operar(num1, num2, cmbOperador.Text).ToString();
-            lblResultado.Text = result;
-        }
-
-        private void BtnConvertirABinario_Click(object sender, EventArgs e)
-        {
-            Numero numBin = new Numero(lblResultado.Text);
-
-            lblResultado.Text = numBin.BinarioDecimal(lblResultado.Text);
+            Numero num2 = new Numero(numero1);
+            Numero num1 = new Numero(numero2);
+            return Calculadora.Operar(num1, num2, operador);
         }
     }
 }
