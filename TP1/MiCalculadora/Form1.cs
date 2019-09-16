@@ -34,6 +34,8 @@ namespace MiCalculadora
             {
                 Numero numBin = new Numero(lblResultado.Text);
                 lblResultado.Text = numBin.DecimalBinario(lblResultado.Text);
+                btnConvertirADecimal.Enabled = true;
+                btnConvertirABinario.Enabled = false;
             }
         }
 
@@ -43,6 +45,8 @@ namespace MiCalculadora
             {
                 Numero numDec = new Numero(lblResultado.Text);
                 lblResultado.Text = numDec.BinarioDecimal(lblResultado.Text);
+                btnConvertirADecimal.Enabled = false;
+                btnConvertirABinario.Enabled = true;
             }
         }
 
@@ -54,6 +58,8 @@ namespace MiCalculadora
         private void BtnOperar_Click(object sender, EventArgs e)
         {
             lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
+            btnConvertirADecimal.Enabled = true;
+            btnConvertirABinario.Enabled = true;
         }
 
         public void Limpiar()

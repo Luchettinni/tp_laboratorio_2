@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Apyr\\Desktop\\tp_laboratorio_2\\TP1\\Entidades\\Entidades.csproj": {}
+    "C:\\Users\\Apyr\\Desktop\\Segundo-Cuatrimestre\\tp_laboratorio_2\\TP1\\Entidades\\Entidades.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Apyr\\Desktop\\tp_laboratorio_2\\TP1\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\Apyr\\Desktop\\Segundo-Cuatrimestre\\tp_laboratorio_2\\TP1\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Apyr\\Desktop\\tp_laboratorio_2\\TP1\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\Apyr\\Desktop\\Segundo-Cuatrimestre\\tp_laboratorio_2\\TP1\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\Apyr\\Desktop\\tp_laboratorio_2\\TP1\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\Apyr\\Desktop\\Segundo-Cuatrimestre\\tp_laboratorio_2\\TP1\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\Apyr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Apyr\\Desktop\\tp_laboratorio_2\\TP1\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\Apyr\\Desktop\\Segundo-Cuatrimestre\\tp_laboratorio_2\\TP1\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
