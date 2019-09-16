@@ -21,6 +21,8 @@ namespace MiCalculadora
             cmbOperador.Items.Add("+");
             cmbOperador.Items.Add("-");
             cmbOperador.Items.Add("*");
+            btnConvertirADecimal.Enabled = false;
+            btnConvertirABinario.Enabled = false;
         }
 
         private void BtnCerrar_Click(object sender, EventArgs e)
@@ -58,7 +60,7 @@ namespace MiCalculadora
         private void BtnOperar_Click(object sender, EventArgs e)
         {
             lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
-            btnConvertirADecimal.Enabled = true;
+            btnConvertirADecimal.Enabled = false;
             btnConvertirABinario.Enabled = true;
         }
 
@@ -68,6 +70,8 @@ namespace MiCalculadora
             txtNumero2.Text = "";
             cmbOperador.Text = "";
             lblResultado.Text = "";
+            btnConvertirADecimal.Enabled = false;
+            btnConvertirABinario.Enabled = false;
         }
 
         private static double Operar(string numero2, string numero1, string operador)
