@@ -194,12 +194,18 @@ namespace Entidades
         #endregion
 
         #region Validacion de numero
+
+        /// <summary>
+        /// Valida si el valor pasado por parametro es un valor numerico.
+        /// </summary>
+        /// <param name="strNumero">es el valor a validar</param>
+        /// <returns>si es un valor numerico valido, es retornado el mismo. caso contrario retorna "0"</returns>
         private double ValidarNumero(string strNumero)
         {
             double retorno;
             bool exito = double.TryParse(strNumero, out retorno);
 
-            if (!exito)
+            if (!exito )
             {
                 retorno = 0f;
             }
