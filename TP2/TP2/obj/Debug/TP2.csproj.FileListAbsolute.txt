@@ -8,3 +8,13 @@ C:\Users\alumno\Desktop\tp_laboratorio_2\TP2\TP2\obj\Debug\TP2.csproj.CoreCompil
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP2\TP2\obj\Debug\TP2.csproj.CopyComplete
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP2\TP2\obj\Debug\TP-02.exe
 C:\Users\alumno\Desktop\tp_laboratorio_2\TP2\TP2\obj\Debug\TP-02.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP2\TP2\bin\Debug\TP-02.exe.config
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP2\TP2\bin\Debug\TP-02.exe
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP2\TP2\bin\Debug\TP-02.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP2\TP2\bin\Debug\Entidades.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP2\TP2\bin\Debug\Entidades.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP2\TP2\obj\Debug\TP2.csprojAssemblyReference.cache
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP2\TP2\obj\Debug\TP2.csproj.CoreCompileInputs.cache
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP2\TP2\obj\Debug\TP2.csproj.CopyComplete
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP2\TP2\obj\Debug\TP-02.exe
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP2\TP2\obj\Debug\TP-02.pdb

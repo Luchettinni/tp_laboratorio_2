@@ -20,11 +20,18 @@ namespace Entidades_2018
         }
 
         #region "Constructores"
+        /// <summary>
+        /// Constructor de la clase changuito
+        /// </summary>
         private Changuito()
         {
             this.productos = new List<Producto>();
             this.espacioDisponible = 0;
         }
+        /// <summary>
+        /// Constructor de la clase changuito, especifica el espacio disponible.
+        /// </summary>
+        /// <param name="espacioDisponible">espacio disponible del changuito</param>
         public Changuito(int espacioDisponible) : this()
         {
             this.espacioDisponible = espacioDisponible;
@@ -55,11 +62,10 @@ namespace Entidades_2018
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles", c.productos.Count, c.espacioDisponible);
+            sb.AppendFormat("Tenemos {0} lugares ocupados de un total de {1} disponibles\n", c.productos.Count, c.espacioDisponible);
             sb.AppendLine("");
             foreach (Producto v in c.productos)
             {
-
                 switch (tipo)
                 {
                     case ETipo.Snacks:
@@ -85,9 +91,7 @@ namespace Entidades_2018
                         sb.AppendLine(v.Mostrar());
                         break;
                 }
-                
             }
-
             return sb.ToString();
         }
         #endregion
@@ -98,7 +102,7 @@ namespace Entidades_2018
         /// </summary>
         /// <param name="c">Objeto donde se agregará el elemento</param>
         /// <param name="p">Objeto a agregar</param>
-        /// <returns></returns>
+        /// <returns>retorna el changuito con el producto añadido siempre y cuando el producto a añadir no existe en el chango</returns>
         public static Changuito operator +(Changuito c, Producto p)
         {
             foreach (Producto v in c.productos)
@@ -122,7 +126,7 @@ namespace Entidades_2018
         /// </summary>
         /// <param name="c">Objeto donde se quitará el elemento</param>
         /// <param name="p">Objeto a quitar</param>
-        /// <returns></returns>
+        /// <returns>retorna el changuito con el producto quitado siempre y cuando el producto a quitar exista en el chango</returns>
         public static Changuito operator -(Changuito c, Producto p)
         {
             foreach (Producto v in c.productos)

@@ -8,10 +8,17 @@ namespace Entidades_2018
 {
     public class Snacks : Producto
     {
-        public Snacks(EMarca marca, string patente, ConsoleColor color) : base(patente, marca, color)
-        {
+        #region constructores
+        /// <summary>
+        /// Constructor de la clase snacks
+        /// </summary>
+        /// <param name="marca">Es la marca del producto</param>
+        /// <param name="codigo">Es el codigo del producto</param>
+        /// <param name="color">Es el color del producto</param>
+        public Snacks(EMarca marca, string codigo, ConsoleColor color) : base(codigo, marca, color) { }
+        #endregion
 
-        }
+        #region propiedades
         /// <summary>
         /// Los snacks tienen 104 calorías
         /// </summary>
@@ -22,19 +29,22 @@ namespace Entidades_2018
                 return 104;
             }
         }
+        #endregion
 
+        #region metodos
+        /// <summary>
+        /// Muestra la marca, el codigo, el color y las calorias del producto.
+        /// </summary>
+        /// <returns>retorna una cadena conformada por todo los datos del producto</returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("");
             sb.AppendLine("SNACKS");
-            sb.AppendLine(base.Mostrar());
-            sb.AppendFormat("CALORIAS : {0}", this.CantidadCalorias);
-            sb.AppendLine("");
-            sb.AppendFormat("---------------------");
+            sb.Append(base.Mostrar());
 
             return sb.ToString();
         }
+        #endregion
     }
 }

@@ -10,25 +10,36 @@ namespace Entidades_2018
 {
     public class Leche : Producto
     {
+        
         public enum ETipo { Entera, Descremada }
         ETipo tipo;
 
+        #region constructores
         /// <summary>
+        /// Constructor de la clase Leche
         /// Por defecto, TIPO será ENTERA
         /// </summary>
-        /// <param name="marca"></param>
-        /// <param name="patente"></param>
-        /// <param name="color"></param>
-        public Leche(EMarca marca, string patente, ConsoleColor color) : base(patente, marca, color)
+        /// <param name="marca">Es la merca del producto</param>
+        /// <param name="codigo">Es el codigo del producto</param>
+        /// <param name="color">Es el color del producto</param>
+        public Leche(EMarca marca, string codigo, ConsoleColor color) : base(codigo, marca, color)
         {
             tipo = ETipo.Entera;
         }
-
-        public Leche(EMarca marca, string patente, ConsoleColor color, ETipo tipoD) : base(patente, marca, color)
+        /// <summary>
+        /// Constructor de la clase Leche, con el tipo de leche especificado.
+        /// </summary>
+        /// <param name="marca">Es la merca del producto</param>
+        /// <param name="codigo">Es el codigo del producto</param>
+        /// <param name="color">Es el color del producto</param>
+        /// <param name="tipoD">Es el tipo de leche del producto</param>
+        public Leche(EMarca marca, string codigo, ConsoleColor color, ETipo tipoD) : base(codigo, marca, color)
         {
             tipo = tipoD;
         }
+        #endregion
 
+        #region propiedades
         /// <summary>
         /// Las leches tienen 20 calorías
         /// </summary>
@@ -39,19 +50,23 @@ namespace Entidades_2018
                 return 20;
             }
         }
+        #endregion
 
+        #region metodos
+        /// <summary>
+        /// Muestra la marca, el codigo, el color, las calorias y el tipo de leche del producto.
+        /// </summary>
+        /// <returns>retorna una cadena conformada por todo los datos del producto</returns>
         public override sealed string Mostrar()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("");
+
             sb.AppendLine("LECHE");
-            sb.AppendLine(base.Mostrar());
-            sb.AppendFormat("CALORIAS : {0}", this.CantidadCalorias);
             sb.AppendLine("TIPO : " + this.tipo);
-            sb.AppendLine("");
-            sb.AppendFormat("---------------------");
+            sb.Append(base.Mostrar());
 
             return sb.ToString();
         }
+        #endregion
     }
 }
