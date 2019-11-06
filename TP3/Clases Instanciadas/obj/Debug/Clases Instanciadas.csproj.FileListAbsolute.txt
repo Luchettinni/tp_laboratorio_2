@@ -1,0 +1,11 @@
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\obj\Debug\Clases Instanciadas.csprojAssemblyReference.cache
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\obj\Debug\Clases Instanciadas.csproj.CoreCompileInputs.cache
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\bin\Debug\Clases Instanciadas.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\bin\Debug\Clases Instanciadas.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\bin\Debug\Clases Abstractas.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\bin\Debug\Excepciones.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\bin\Debug\Clases Abstractas.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\bin\Debug\Excepciones.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\obj\Debug\Clases Instanciadas.csproj.CopyComplete
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\obj\Debug\Clases Instanciadas.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\obj\Debug\Clases Instanciadas.pdb

@@ -1,0 +1,9 @@
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Abstractas\bin\Debug\Clases Abstractas.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Abstractas\bin\Debug\Clases Abstractas.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csproj.CoreCompileInputs.cache
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Abstractas\obj\Debug\Clases Abstractas.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Abstractas\obj\Debug\Clases Abstractas.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Abstractas\bin\Debug\Excepciones.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Abstractas\bin\Debug\Excepciones.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csprojAssemblyReference.cache
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Abstractas\obj\Debug\Clases Abstractas.csproj.CopyComplete
