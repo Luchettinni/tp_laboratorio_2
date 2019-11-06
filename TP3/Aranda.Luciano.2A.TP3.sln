@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases Abstractas", "Clases
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Clases Instanciadas", "Clases Instanciadas\Clases Instanciadas.csproj", "{C7C4FEFD-FE73-493C-9084-2F4714EA1B6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "Console\ConsoleApp.csproj", "{7842C57A-FFD7-42F4-9C0F-18B65CB8735E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{1F84E027-B84E-4BFF-8CD9-2B3C4F5AEF73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{C7C4FEFD-FE73-493C-9084-2F4714EA1B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7C4FEFD-FE73-493C-9084-2F4714EA1B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7C4FEFD-FE73-493C-9084-2F4714EA1B6E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7842C57A-FFD7-42F4-9C0F-18B65CB8735E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7842C57A-FFD7-42F4-9C0F-18B65CB8735E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7842C57A-FFD7-42F4-9C0F-18B65CB8735E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7842C57A-FFD7-42F4-9C0F-18B65CB8735E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F84E027-B84E-4BFF-8CD9-2B3C4F5AEF73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F84E027-B84E-4BFF-8CD9-2B3C4F5AEF73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F84E027-B84E-4BFF-8CD9-2B3C4F5AEF73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F84E027-B84E-4BFF-8CD9-2B3C4F5AEF73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
