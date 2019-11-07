@@ -81,7 +81,14 @@ namespace Clases_Instanciadas
         {
             Xml<Universidad> writer = new Xml<Universidad>();
 
-            return writer.Guardar("Universidad.xml", uni );
+            try
+            {
+                return writer.Guardar("Universidad.xml", uni);
+            }
+            catch (Exception e)
+            {
+                throw new ArchivosException(e);
+            }
         }
 
         public static Universidad Leer()
@@ -89,16 +96,16 @@ namespace Clases_Instanciadas
             Xml<Universidad> reader = new Xml<Universidad>();
             Universidad retorno = new Universidad();
 
-            bool completado = reader.Leer("Universidad.xml", out retorno);
+            try
+            {
+                reader.Leer("Universidad.xml", out retorno);
+            }
+            catch (Exception e)
+            {
+                throw new ArchivosException(e);
+            }
 
-            if (!completado)
-            {
-                throw new Exception();
-            }
-            else
-            {
-                return retorno;
-            }
+            return retorno;
         }
 
         #endregion

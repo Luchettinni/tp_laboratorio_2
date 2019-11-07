@@ -29,10 +29,9 @@ namespace Archivos
                 writer.Close();
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return false;
-                throw;
+                throw e;
             } 
         }
 
@@ -52,11 +51,10 @@ namespace Archivos
                 reader.Close();
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 datos = default;
-                return false;
-                throw;
+                throw e;
             }
         }
 

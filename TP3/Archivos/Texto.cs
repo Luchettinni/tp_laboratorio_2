@@ -18,7 +18,7 @@ namespace Archivos
         /// <param name="archivo">Ubicacion del archivo</param>
         /// <param name="datos">Datos a guardar</param>
         /// <returns>true si logro guardar el archivo sin ningun problema, false caso contrario</returns>
-        bool IArchivo<string>.Guardar(string archivo, string datos)
+        public bool Guardar(string archivo, string datos)
         {
             try
             {
@@ -27,9 +27,9 @@ namespace Archivos
                 writer.Close();
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                return false;
+                throw e;
             }
         }
 
@@ -39,7 +39,7 @@ namespace Archivos
         /// <param name="archivo">Ubicacion del archivo</param>
         /// <param name="datos">Variable en la cual se almacenaran los datos cargados del archivo</param>
         /// <returns>true si logro leer los datos sin ningun problema, false caso contrario</returns>
-        bool IArchivo<string>.Leer(string archivo, out string datos)
+        public bool Leer(string archivo, out string datos)
         {
             try
             {
@@ -48,10 +48,10 @@ namespace Archivos
                 reader.Close();
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 datos = null;
-                return false;
+                throw e;
             }
         }
 

@@ -10,14 +10,14 @@ namespace Excepciones
     {
         string mensajeBase;
 
-        public DniInvalidoException() : base()
+        public DniInvalidoException() : base("DNI invalido: caracteres invalidos, excedio el rango o no lo pudo superar")
         {
-            this.mensajeBase = base.Message;
+            
         }
 
-        public DniInvalidoException(Exception e) : base(e.Message, e)
+        public DniInvalidoException(Exception e) : base("DNI invalido: caracteres invalidos, excedio el rango o no lo pudo superar", e)
         {
-
+            mensajeBase = e.Message;
         }
 
         public DniInvalidoException(string mensaje) : base(mensaje)
@@ -27,7 +27,7 @@ namespace Excepciones
 
         public DniInvalidoException(string mensaje, Exception e) : base(mensaje, e)
         {
-
+            mensajeBase = e.Message;
         }
 
     }

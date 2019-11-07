@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using Archivos;
+using Excepciones;
 
 namespace Clases_Instanciadas
 {
@@ -63,6 +64,10 @@ namespace Clases_Instanciadas
 
         #region Metodos
 
+        /// <summary>
+        /// Retorna todos los datos de esta jornada especifica
+        /// </summary>
+        /// <returns>retorna la clase de la jornada, el profesor y los alumnos que toman esa clase</returns>
         public override string ToString()
         {
             string retorno = "";
@@ -86,27 +91,45 @@ namespace Clases_Instanciadas
             return retorno;
         }
 
+        /// <summary>
+        /// Guarda los datos de la jornada en un archivo.txt
+        /// </summary>
+        /// <param name="jornada">La jornada que contiene los datos a guardar</param>
+        /// <returns>true si logro completar el guardado, false caso contrario</returns>
         public static bool Guardar(Jornada jornada)
         {
             Texto writer = new Texto();
 
-            return ((IArchivo<string>)writer).Guardar("Jornada.txt", jornada.ToString());
+            try
+            {
+                return writer.Guardar("Jornada.txt", jornada.ToString());
+            }
+            catch (Exception e)
+            {
+                throw new ArchivosException(e);
+            }
         }
 
+        /// <summary>
+        /// devuelve todos los datos de una jornada previamente guardada en un archivo de texto
+        /// </summary>
+        /// <returns>devuelve los datos, en caso de error devolvera una excepcion</returns>
         public static string Leer()
         {
+
             Texto reader = new Texto();
             string retorno;
-            bool completado = ((IArchivo<string>)reader).Leer("Jornada.txt", out retorno);
 
-            if (!completado)
+            try
             {
-                throw new Exception();
+                reader.Leer("Jornada.txt", out retorno);
             }
-            else
+            catch (Exception e)
             {
-                return retorno;
+                throw new ArchivosException(e);
             }
+            
+            return retorno;
         }
 
         #endregion
@@ -142,9 +165,15 @@ namespace Clases_Instanciadas
             return !(j == a);
         }
 
+        /// <summary>
+        /// Agrega un alumno a la jornada, siempre y cuando este no este dentro de la misma
+        /// </summary>
+        /// <param name="j">Jornada</param>
+        /// <param name="a">Alumno a agregar</param>
+        /// <returns>retorna la jornada con el alumno agregado</returns>
         public static Jornada operator +(Jornada j, Alumno a)
         {
-            if ( j != a && a != j.Instructor )
+            if ( j != a )
             {
                 j.Alumnos.Add(a);
             }
