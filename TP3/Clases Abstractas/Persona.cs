@@ -94,7 +94,13 @@ namespace Clases_Abstractas
         /// <summary>
         /// Constructor default de persona.
         /// </summary>
-        public Persona() { }
+        public Persona()
+        {
+            this.nombre = "SIN NOMBRE";
+            this.apellido = "SIN APELLIDO";
+            this.nacionalidad = ENacionalidad.Argentino;
+            this.dni = 0;
+        }
 
         /// <summary>
         /// Constructor de persona, los parametros inicializan algunos de sus atributos.
@@ -102,7 +108,7 @@ namespace Clases_Abstractas
         /// <param name="nombre">Nombre de la persona</param>
         /// <param name="apellido">Apellido de la persona</param>
         /// <param name="nacionalidad">Nacionalidad de la persona</param>
-        public Persona(string nombre, string apellido, ENacionalidad nacionalidad)
+        public Persona(string nombre, string apellido, ENacionalidad nacionalidad) : this()
         {
             this.Nombre= nombre;
             this.Apellido = apellido;

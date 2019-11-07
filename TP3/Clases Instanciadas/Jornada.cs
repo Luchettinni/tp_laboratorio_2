@@ -9,9 +9,14 @@ namespace Clases_Instanciadas
 {
     public class Jornada
     {
+
+        #region Atributos
+
         List<Alumno> alumnos;
         Universidad.EClases clase;
         Profesor instructor;
+
+        #endregion
 
         #region Propiedades
 
@@ -61,7 +66,7 @@ namespace Clases_Instanciadas
         {
             string retorno = "";
 
-            retorno += "JORNADA: \nCLASE DE: " + this.clase + " POR " + this.instructor.ToString();
+            retorno += "CLASE DE: " + this.clase + " POR " + this.instructor.ToString();
             retorno += "ALUMNOS: \n";
 
             foreach(Alumno alumno in this.alumnos)
@@ -106,9 +111,15 @@ namespace Clases_Instanciadas
 
         #region Sobrecargas
 
+        /// <summary>
+        /// Verifica si el alumno en cuestion participa en la clase de la jornada.
+        /// </summary>
+        /// <param name="j">Jornada</param>
+        /// <param name="a">Alumno a verificar</param>
+        /// <returns>true si el alumno participa en la clase, false en caso contrario</returns>
         public static bool operator ==(Jornada j, Alumno a)
         {
-            if ( a == j.Clase )
+            if ( j.alumnos.Contains(a) )
             {
                 return true;
             }
@@ -118,6 +129,12 @@ namespace Clases_Instanciadas
             }
         }
 
+        /// <summary>
+        /// Verifica si el alumno en cuestion no participa en la clase de la jornada.
+        /// </summary>
+        /// <param name="j">Jornada</param>
+        /// <param name="a">Alumno a verificar</param>
+        /// <returns>true si el alumno no participa en la clase, false en caso contrario</returns>
         public static bool operator !=(Jornada j, Alumno a)
         {
             return !(j == a);
@@ -125,9 +142,9 @@ namespace Clases_Instanciadas
 
         public static Jornada operator +(Jornada j, Alumno a)
         {
-            if ( !j.alumnos.Contains(a) )
+            if ( j != a && a != j.Instructor )
             {
-                j.alumnos.Add(a);
+                j.Alumnos.Add(a);
             }
 
             return j;

@@ -66,11 +66,11 @@ namespace Clases_Instanciadas
         public override string ToString()
         {
             string retorno = "";
-
-            foreach(Jornada jornada in this.Jornadas)
+            retorno += "JORNADA: \n";
+            foreach (Jornada jornada in this.Jornadas)
             {
                 retorno += jornada.ToString();
-                retorno += "\n" + "<-------------------------------------------------->" + "\n" ;
+                retorno += "<-------------------------------------------------->" + "\n" ;
             }
 
             return retorno;
@@ -80,6 +80,12 @@ namespace Clases_Instanciadas
 
         #region Sobrecargas
 
+        /// <summary>
+        /// Verifica si el alumno ya esta cargado en la universidad
+        /// </summary>
+        /// <param name="g">Universidad</param>
+        /// <param name="a">Alumno</param>
+        /// <returns>true si el alumno ya esta cargado, false en caso contrario</returns>
         public static bool operator ==(Universidad g, Alumno a)
         {
             foreach( Alumno alu in g.alumnos )
@@ -92,28 +98,52 @@ namespace Clases_Instanciadas
             return false;
         }
 
+        /// <summary>
+        /// Verifica si el alumno no esta cargado en la universidad
+        /// </summary>
+        /// <param name="g">Universidad</param>
+        /// <param name="a">Alumno</param>
+        /// <returns>true si el alumno no esta cargado, false en caso contrario</returns>
         public static bool operator !=(Universidad g, Alumno a)
         {
             return !(g == a);
         }
 
+        /// <summary>
+        /// Verifica si el profesor esta dando clases en la universidad
+        /// </summary>
+        /// <param name="g">Universidad</param>
+        /// <param name="i">Profesor</param>
+        /// <returns>true si el profesor esta dando clases en la universidad, false en caso contrario</returns>
         public static bool operator ==(Universidad g, Profesor i)
         {
-            if ( g.Instructores.Contains(i) )
+            foreach (Profesor instructor in g.Instructores)
             {
-                return true;
+                if (instructor == i)
+                {
+                    return true;
+                }
             }
-            else
-            {
-                return false;
-            }
+            return false;
         }
 
+        /// <summary>
+        /// Verifica si el profesor no esta dando clases en la universidad
+        /// </summary>
+        /// <param name="g">Universidad</param>
+        /// <param name="i">Profesor</param>
+        /// <returns>true si el profesor no esta dando clases en la universidad, false en caso contrario</returns>
         public static bool operator !=(Universidad g, Profesor i)
         {
             return !(g == i);
         }
 
+        /// <summary>
+        /// Encuentra al primer profesor capaz de dar esa clase
+        /// </summary>
+        /// <param name="u">Universidad</param>
+        /// <param name="clase">Clase a verificar</param>
+        /// <returns>retornara al primer profesor capaz de dar esa clase, caso contrario retornara una excepcion</returns>
         public static Profesor operator ==(Universidad u, EClases clase)
         {
             foreach( Profesor profesor in u.Instructores )
@@ -126,6 +156,12 @@ namespace Clases_Instanciadas
             throw new SinProfesorException();
         }
 
+        /// <summary>
+        /// Encuentra al primer profesor no capaz de dar esa clase
+        /// </summary>
+        /// <param name="u">Universidad</param>
+        /// <param name="clase">Clase a verificar</param>
+        /// <returns>retornara al primer profesor no capaz de dar esa clase, caso contrario retornara una excepcion</returns>
         public static Profesor operator !=(Universidad u, EClases clase)
         {
             foreach (Profesor profesor in u.Instructores)
@@ -138,20 +174,27 @@ namespace Clases_Instanciadas
             throw new SinProfesorException();
         }
 
+        /// <summary>
+        /// Genera una nueva jornada en la universidad con los alumnos que tomen la misma y el prfoseor que tambien lo haga
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="clase"></param>
+        /// <returns></returns>
         public static Universidad operator +(Universidad g, EClases clase)
         {
             try
             {
                 Jornada nuevaJornada = new Jornada(clase, (g == clase));
-                g.jornada.Add(nuevaJornada);
-
+                
                 foreach ( Alumno alumno in g.Alumnos )
                 {
-                    if ( alumno == nuevaJornada.Clase )
+                    if ( alumno == nuevaJornada.Clase && nuevaJornada.Instructor.DNI != alumno.DNI )
                     {
-                        nuevaJornada.Alumnos.Add(alumno);
+                        nuevaJornada += alumno;
                     }
                 }
+
+                g.jornada.Add(nuevaJornada);
 
                 return g;
             }
@@ -160,9 +203,16 @@ namespace Clases_Instanciadas
                 throw e;
             }
         }
+
+        /// <summary>
+        /// Agrega un alumno a la universidad siempre y cuando no exista dentro de ella
+        /// </summary>
+        /// <param name="u">Universidad</param>
+        /// <param name="a">Alumno</param>
+        /// <returns>retornara la universidad con el alumno cargado, caso contrario retornara una excepcion</returns>
         public static Universidad operator +(Universidad u, Alumno a)
         {
-            if ( !(u == a) )
+            if ( u != a )
             {
                 u.Alumnos.Add(a);
             }
@@ -174,17 +224,21 @@ namespace Clases_Instanciadas
             return u;
         }
 
+        /// <summary>
+        /// Agrega un profesor a la universidad siempre y cuando no exista dentro de ella
+        /// </summary>
+        /// <param name="u">Universidad</param>
+        /// <param name="a">Alumno</param>
+        /// <returns>retornara la universidad con el profesor cargado, caso contrario retornara una excepcion</returns>
         public static Universidad operator +(Universidad u, Profesor i)
         {
-            if (!(u == i))
+            if (u != i)
             {
                 u.Instructores.Add(i);
             }
 
             return u;
         }
-
-
         #endregion
     }
 }

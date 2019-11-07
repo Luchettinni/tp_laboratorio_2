@@ -9,6 +9,9 @@ namespace Clases_Instanciadas
 {
     public sealed class Alumno : Universitario
     {
+
+        #region Enumerado
+
         public enum EEstadoCuenta
         {
             AlDia,
@@ -16,8 +19,14 @@ namespace Clases_Instanciadas
             Becado
         }
 
+        #endregion
+
+        #region Atributos
+
         Universidad.EClases claseQueToma;
         EEstadoCuenta estadoCuenta;
+
+        #endregion
 
         #region Constructores
 
@@ -32,8 +41,8 @@ namespace Clases_Instanciadas
         }
 
         /// <summary>
-        /// Constructor de alumno, los parametros inicializan todos los atributos de la clase (menos el estado de la cuenta)
-        /// y los heredados tambien
+        /// Constructor de alumno, los parametros inicializan todos los atributos de la clase y los heredados tambien. 
+        /// (el estado de la cuenta sera por defecto " al dia ")
         /// </summary>
         /// <param name="id">Legajo/Id del alumno</param>
         /// <param name="nombre">Nombre del alumno</param>
@@ -45,6 +54,7 @@ namespace Clases_Instanciadas
             base(id, nombre, apellido, dni, nacionalidad)
         {
             this.claseQueToma = claseQueToma;
+            this.estadoCuenta = EEstadoCuenta.AlDia;
         }
         /// <summary>
         /// Constructor de alumno, los parametros inicializan todos los atributos de la clase y los heredados tambien
@@ -67,9 +77,9 @@ namespace Clases_Instanciadas
         #region Metodos
 
         /// <summary>
-        /// Convierte todos los datos del alumno en una cadena de caracteres
+        /// Muestra los datos completos del alumno
         /// </summary>
-        /// <returns>retorna todos los datos del alumno</returns>
+        /// <returns>Retorna Apellido, Nombre, Nacionalidad, Legajo, Estado de la cuenta y la Clase que toma</returns>
         protected override string MostrarDatos()
         {
             return base.MostrarDatos() +  "\nESTADO DE LA CUENTA: " + this.estadoCuenta + ParticiparEnClase();
@@ -78,16 +88,16 @@ namespace Clases_Instanciadas
         /// <summary>
         /// Muestra que clase esta tomando esta persona
         /// </summary>
-        /// <returns>retorna la clase en la que esta participando</returns>
+        /// <returns>Retorna la clase que esta tomando</returns>
         protected override string ParticiparEnClase()
         {
             return "\nTOMA CLASE DE " + this.claseQueToma;
         }
 
         /// <summary>
-        /// retorna los datos del alumno
+        /// Retorna los datos del alumno.
         /// </summary>
-        /// <returns>retorna todos los atributos propios y heredados en formato string</returns>
+        /// <returns>Retorna Apellido, Nombre, Nacionalidad, Legajo, Estado de la cuenta y la Clase que toma</returns>
         public override string ToString()
         {
             return MostrarDatos();
@@ -95,14 +105,14 @@ namespace Clases_Instanciadas
 
         #endregion
 
-        #region Sobrecarga de metodos
+        #region Sobrecargas
 
         /// <summary>
-        /// verifica si el alumno esta tomando una clase especifica
+        /// Verifica si el alumno esta tomando una clase especifica
         /// </summary>
         /// <param name="a">Alumno</param>
         /// <param name="clase">Clase a verificar</param>
-        /// <returns>true si este esta tomando esa clase y su estado no es deudor, false en caso contrario </returns>
+        /// <returns>true si este esta tomando esa clase y su estado no es deudor, false en caso contrario</returns>
         public static bool operator ==(Alumno a, Universidad.EClases clase)
         {
             if ( a.claseQueToma == clase && a.estadoCuenta != EEstadoCuenta.Deudor )
@@ -116,7 +126,7 @@ namespace Clases_Instanciadas
         }
 
         /// <summary>
-        /// verifica si el alumno no esta tomando una clase especifica
+        /// Verifica si el alumno no esta tomando una clase especifica
         /// </summary>
         /// <param name="a">Alumno</param>
         /// <param name="clase">Clase a verificar</param>
@@ -125,6 +135,7 @@ namespace Clases_Instanciadas
         {
             return !(a == clase);
         }
+
         #endregion
     }
 }
