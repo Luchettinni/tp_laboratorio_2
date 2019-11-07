@@ -167,7 +167,7 @@ namespace Clases_Abstractas
             {
                datoInt = int.Parse(dato);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw new DniInvalidoException("DNI presenta error de formato : El DNI no debe contener letras y/o simbolos especiales");
             }
@@ -221,7 +221,7 @@ namespace Clases_Abstractas
             {
                 if ( !char.IsLetter(character) || char.IsWhiteSpace(character) )
                 {
-                    throw new FormatException("Los caracteres ingresados para el Nombre/Apellido de esta persona son invalidos");
+                    dato = null;
                 }
             }
 
