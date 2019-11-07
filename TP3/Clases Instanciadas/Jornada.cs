@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Archivos;
 
 namespace Clases_Instanciadas
 {
@@ -67,43 +68,44 @@ namespace Clases_Instanciadas
             string retorno = "";
 
             retorno += "CLASE DE: " + this.clase + " POR " + this.instructor.ToString();
-            retorno += "ALUMNOS: \n";
-
-            foreach(Alumno alumno in this.alumnos)
+            if (this.Alumnos.Count != 0)
             {
-                retorno += alumno.ToString() + "\n";
+                retorno += "ALUMNOS: \n";
+
+                foreach (Alumno alumno in this.alumnos)
+                {
+                    retorno += alumno.ToString() + "\n";
+                }
             }
+            else
+            {
+                retorno += "- NO HAY ALUMNOS PARA ESTA JORNADA... -\n";
+            }
+            
 
             return retorno;
         }
 
-        public bool guardar(Jornada jornada)
+        public static bool Guardar(Jornada jornada)
         {
-            try
-            {
-                StreamWriter guardado = new StreamWriter( Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Datos.txt" );
-                guardado.Write(jornada.ToString());
-                guardado.Close();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            Texto writer = new Texto();
+
+            return ((IArchivo<string>)writer).Guardar("Jornada.txt", jornada.ToString());
         }
 
-        public string Leer()
+        public static string Leer()
         {
-            try
+            Texto reader = new Texto();
+            string retorno;
+            bool completado = ((IArchivo<string>)reader).Leer("Jornada.txt", out retorno);
+
+            if (!completado)
             {
-                StreamReader Cargado = new StreamReader(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\Datos.txt");
-                string retorno = Cargado.ReadToEnd();
-                Cargado.Close();
-                return retorno;
+                throw new Exception();
             }
-            catch (Exception e)
+            else
             {
-                return e.Message;
+                return retorno;
             }
         }
 

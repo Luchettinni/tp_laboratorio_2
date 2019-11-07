@@ -84,8 +84,8 @@ namespace Clases_Instanciadas
         /// </summary>
         private void _randomClases()
         {
-            this.clasesDelDia.Enqueue((Universidad.EClases)random.Next(0, 3));
-            this.clasesDelDia.Enqueue((Universidad.EClases)random.Next(0, 3));
+            this.clasesDelDia.Enqueue((Universidad.EClases)random.Next(1, 4));
+            this.clasesDelDia.Enqueue((Universidad.EClases)random.Next(1, 4));
         }
 
         /// <summary>

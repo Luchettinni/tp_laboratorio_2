@@ -9,3 +9,5 @@ C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\bin\Debug\Excepci
 C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\obj\Debug\Clases Instanciadas.csproj.CopyComplete
 C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\obj\Debug\Clases Instanciadas.dll
 C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\obj\Debug\Clases Instanciadas.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\bin\Debug\Archivos.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Clases Instanciadas\bin\Debug\Archivos.pdb

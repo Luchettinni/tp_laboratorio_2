@@ -21,3 +21,5 @@ C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Test Unitarios\bin\Debug\Clases Abstr
 C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Test Unitarios\bin\Debug\Clases Instanciadas.dll
 C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Test Unitarios\bin\Debug\Clases Abstractas.pdb
 C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Test Unitarios\bin\Debug\Clases Instanciadas.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Test Unitarios\bin\Debug\Archivos.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Test Unitarios\bin\Debug\Archivos.pdb

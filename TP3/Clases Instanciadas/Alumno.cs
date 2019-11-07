@@ -36,8 +36,7 @@ namespace Clases_Instanciadas
         /// </summary>
         public Alumno() : base()
         {
-            this.estadoCuenta = EEstadoCuenta.AlDia;
-            this.claseQueToma = Universidad.EClases.Programacion;
+
         }
 
         /// <summary>

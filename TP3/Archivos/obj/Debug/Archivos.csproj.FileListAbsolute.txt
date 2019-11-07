@@ -1,0 +1,6 @@
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Archivos\obj\Debug\Archivos.csprojAssemblyReference.cache
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Archivos\obj\Debug\Archivos.csproj.CoreCompileInputs.cache
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Archivos\bin\Debug\Archivos.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Archivos\bin\Debug\Archivos.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Archivos\obj\Debug\Archivos.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\Archivos\obj\Debug\Archivos.pdb

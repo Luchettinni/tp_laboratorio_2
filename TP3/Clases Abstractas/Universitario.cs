@@ -22,7 +22,7 @@ namespace Clases_Abstractas
         /// </summary>
         public Universitario () : base()
         {
-            this.legajo = 0;
+
         }
 
         /// <summary>

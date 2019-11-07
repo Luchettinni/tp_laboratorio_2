@@ -12,3 +12,5 @@ C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\ConsoleApp\obj\Debug\ConsoleApp.cspro
 C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\ConsoleApp\obj\Debug\ConsoleApp.csproj.CopyComplete
 C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\ConsoleApp\obj\Debug\ConsoleApp.exe
 C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\ConsoleApp\obj\Debug\ConsoleApp.pdb
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\ConsoleApp\bin\Debug\Archivos.dll
+C:\Users\Apyr\Desktop\tp_laboratorio_2\TP3\ConsoleApp\bin\Debug\Archivos.pdb

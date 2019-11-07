@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Excepciones;
+using Archivos;
 
 namespace Clases_Instanciadas
 {
@@ -74,6 +75,30 @@ namespace Clases_Instanciadas
             }
 
             return retorno;
+        }
+
+        public static bool Guardar(Universidad uni)
+        {
+            Xml<Universidad> writer = new Xml<Universidad>();
+
+            return writer.Guardar("Universidad.xml", uni );
+        }
+
+        public static Universidad Leer()
+        {
+            Xml<Universidad> reader = new Xml<Universidad>();
+            Universidad retorno = new Universidad();
+
+            bool completado = reader.Leer("Universidad.xml", out retorno);
+
+            if (!completado)
+            {
+                throw new Exception();
+            }
+            else
+            {
+                return retorno;
+            }
         }
 
         #endregion
@@ -228,8 +253,8 @@ namespace Clases_Instanciadas
         /// Agrega un profesor a la universidad siempre y cuando no exista dentro de ella
         /// </summary>
         /// <param name="u">Universidad</param>
-        /// <param name="a">Alumno</param>
-        /// <returns>retornara la universidad con el profesor cargado, caso contrario retornara una excepcion</returns>
+        /// <param name="i">Profesor</param>
+        /// <returns>retornara la universidad con el profesor cargado (o en caso de que no se pudo, la universidad sin el cargado)</returns>
         public static Universidad operator +(Universidad u, Profesor i)
         {
             if (u != i)

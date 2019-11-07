@@ -24,7 +24,7 @@ namespace ConsoleApp
                 Alumno a2 = new Alumno(2,"Juana", "Martinez", "12234458", EntidadesAbstractas.Persona.ENacionalidad.Extranjero, Universidad.EClases.Laboratorio, Alumno.EEstadoCuenta.Deudor);
                 uni += a2;
             }
-            catch (NacionalidadInvalidaException e) // este no se deberia cargar
+            catch (NacionalidadInvalidaException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -34,7 +34,7 @@ namespace ConsoleApp
                 Alumno a3 = new Alumno(3, "José", "Gutierrez", "12234456", EntidadesAbstractas.Persona.ENacionalidad.Argentino, Universidad.EClases.Programacion, Alumno.EEstadoCuenta.Becado);
                 uni += a3;
             }
-            catch (AlumnoRepetidoException e) // este no se deberia cargar
+            catch (AlumnoRepetidoException e)
             {
                 Console.WriteLine(e.Message);
             }
@@ -69,9 +69,10 @@ namespace ConsoleApp
             Console.ReadKey();
             Console.Clear();
 
-            /*try
+            try
             {
-                Universidad.Guardar(uni); Console.WriteLine("Archivo de Universidad guardado.");
+                Universidad.Guardar(uni);
+                Console.WriteLine("Archivo de Universidad guardado.");
             }
             catch (ArchivosException e)
             {
@@ -80,13 +81,15 @@ namespace ConsoleApp
 
             try
             {
-                intjornada = 0; Jornada.Guardar(uni[jornada]); Console.WriteLine("Archivo de Jornada {0} guardado.", jornada);
+                int jornada = 0;
+                Jornada.Guardar(uni[jornada]);
+                Console.WriteLine("Archivo de Jornada {0} guardado.", jornada);
                 //Console.WriteLine(Jornada.Leer());
             }
             catch (ArchivosException e)
             {
                 Console.WriteLine(e.Message);
-            }*/
+            }
 
             Console.ReadKey();
         }

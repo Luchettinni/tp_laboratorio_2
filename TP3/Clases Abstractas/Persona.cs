@@ -21,10 +21,12 @@ namespace Clases_Abstractas
 
         #region Atributos
 
+        
         string nombre;
         string apellido;
         ENacionalidad nacionalidad;
         int dni;
+
 
         #endregion
 
@@ -64,6 +66,7 @@ namespace Clases_Abstractas
                 }
                 catch (Exception e)
                 {
+
                     throw e;
                 }
             }
@@ -82,6 +85,7 @@ namespace Clases_Abstractas
                 }
                 catch (Exception e)
                 {
+
                     throw e;
                 }
             }
@@ -96,10 +100,7 @@ namespace Clases_Abstractas
         /// </summary>
         public Persona()
         {
-            this.nombre = "SIN NOMBRE";
-            this.apellido = "SIN APELLIDO";
-            this.nacionalidad = ENacionalidad.Argentino;
-            this.dni = 0;
+
         }
 
         /// <summary>
@@ -124,7 +125,7 @@ namespace Clases_Abstractas
         /// <param name="nacionalidad">Nacionalidad de la persona</param>
         public Persona(string nombre, string apellido, string dni, ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
-            StringToDNI = dni.ToString();
+            StringToDNI = dni;
         }
 
         /// <summary>
@@ -134,9 +135,9 @@ namespace Clases_Abstractas
         /// <param name="apellido">Apellido de la persona</param>
         /// <param name="dni">DNI de la persona</param>
         /// <param name="nacionalidad">Nacionalidad de la persona</param>
-        public Persona(string nombre, string apellido, int dni ,ENacionalidad nacionalidad) : this(nombre,apellido, dni.ToString() ,nacionalidad)
+        public Persona(string nombre, string apellido, int dni ,ENacionalidad nacionalidad) : this(nombre, apellido, nacionalidad)
         {
-            
+            this.DNI = dni;
         }
 
         #endregion
@@ -171,19 +172,27 @@ namespace Clases_Abstractas
                 throw new DniInvalidoException("DNI presenta error de formato : El DNI no debe contener letras y/o simbolos especiales");
             }
 
-            if ( !(datoInt >= 1 && datoInt <= 99999999) )
+            if (!(datoInt >= 1 && datoInt <= 99999999))
             {
                 throw new DniInvalidoException("DNI presenta error de formato : El DNI Exede el maximo o no supera el minimo de numeros permitidos");
             }
 
-            if ( nacionalidad == ENacionalidad.Argentino && !( datoInt >= 1 && datoInt <= 89999999 ) )
+            switch (nacionalidad)
             {
-                throw new NacionalidadInvalidaException("La nacionalidad debe ser extranjera");
-            }
-
-            else if ( nacionalidad == ENacionalidad.Extranjero && !( datoInt >= 90000000 && datoInt <= 99999999 ) )
-            {
-                throw new NacionalidadInvalidaException("La nacionalidad debe ser argentina");
+                case ENacionalidad.Argentino:
+                    if ( !(datoInt >= 1 && datoInt <= 89999999) )
+                    {
+                        throw new NacionalidadInvalidaException("La nacionalidad debe ser extranjera.");
+                    }
+                    break;
+                case ENacionalidad.Extranjero:
+                    if ( !(datoInt >= 90000000 && datoInt <= 99999999) )
+                    {
+                        throw new NacionalidadInvalidaException("La nacionalidad debe ser argentina.");
+                    }
+                    break;
+                default:
+                    throw new NacionalidadInvalidaException("La nacionalidad es invalida.");
             }
 
             return datoInt;
