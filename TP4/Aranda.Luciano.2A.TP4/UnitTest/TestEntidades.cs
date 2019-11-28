@@ -5,8 +5,11 @@ using Entidades;
 namespace UnitTest
 {
     [TestClass]
-    public class UnitTest1
+    public class TestEntidades
     {
+        /// <summary>
+        /// realiza una prueba la cual consiste en verificar que la lista de paquetes en correo este instanciada.
+        /// </summary>
         [TestMethod]
         public void ListaDelCorreoInstanciada()
         {
@@ -15,6 +18,9 @@ namespace UnitTest
             Assert.IsNotNull(correo.Paquetes);
         }
 
+        /// <summary>
+        /// verifica si se puede añadir dos paquetes con mismo ID a un correo
+        /// </summary>
         [TestMethod]
         [ExpectedException(typeof(TrackingIdRepetidoException), "Tracking id repetido")]
         public void IgualTrackingID()
@@ -26,9 +32,8 @@ namespace UnitTest
             correo += a;
             correo += b;
 
-            //Paquete c = new Paquete("A5551", "0000000001");
+            //Paquete c = new Paquete("A5551", "0000000001"); 
             //correo += c;
-
         }
     }
 }
