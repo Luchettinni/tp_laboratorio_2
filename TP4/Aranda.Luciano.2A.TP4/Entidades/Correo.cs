@@ -7,7 +7,6 @@ using System.Threading;
 
 namespace Entidades
 {
-    // FALTA EL TRACKINGIDREPETIDOEXCEPTION
     public class Correo : IMostrar< List<Paquete> >
     {
         #region Atributos
@@ -82,7 +81,7 @@ namespace Entidades
             {
                 if ( p == paquete )
                 {
-                    throw new Exception();
+                    throw new TrackingIdRepetidoException( ("El trackig id | " + p.TrackingID + " | ya figura en la lista de envios") );
                 }
             }
 

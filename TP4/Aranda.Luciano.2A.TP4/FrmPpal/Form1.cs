@@ -92,7 +92,14 @@ namespace FrmPpal
             {
                 this.rtbMostrar.Clear();
                 this.rtbMostrar.Text = elemento.MostrarDatos(elemento);
-                this.rtbMostrar.Text.Guardar("Salida.txt");
+                try
+                {
+                    this.rtbMostrar.Text.Guardar("Salida.txt");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

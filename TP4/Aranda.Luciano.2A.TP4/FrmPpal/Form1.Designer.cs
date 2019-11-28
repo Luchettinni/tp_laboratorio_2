@@ -191,7 +191,7 @@
             // 
             // rtbMostrar
             // 
-            this.rtbMostrar.ForeColor = System.Drawing.Color.Gray;
+            this.rtbMostrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.rtbMostrar.Location = new System.Drawing.Point(12, 306);
             this.rtbMostrar.Name = "rtbMostrar";
             this.rtbMostrar.Size = new System.Drawing.Size(461, 138);
